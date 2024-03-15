@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 import { Header1 } from '../organism/Header1.jsx'
 import { Card1 } from '../organism/Card1'
+import { SideBar1 } from '../organism/SideBar1.jsx'
 
 export const Proyecto1Template = () => {
 
     return (
         <Container>
+            <SideBar1 />
             <section className='header'>
                 <Header1 title='Card con extractor de colores' />
             </section>

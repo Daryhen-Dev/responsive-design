@@ -1,11 +1,11 @@
 export const Light = {
+
     bodycolor: "rgb(228, 233, 247)",
-    sidebarcolor: "#fff",
+    sidebarcolor:" #FFF",
     primarycolor: "#695CFE",
     primarycolorlight: "#F6F5FF",
     togglecolor: "#DDD",
     textcolor: "#707070",
-  
     rgbafondoanimado: "rgba(102, 102, 102, 0.2)",
     body: "#fff",
     text: "#202020",
