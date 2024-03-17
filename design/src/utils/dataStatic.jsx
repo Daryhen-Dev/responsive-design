@@ -19,12 +19,12 @@ export const LinkSideBar = [
     {
         label: '#01 card-1',
         icon: <reu.iconoCard/>,
-        to: '/card1'
+        to: '/'
     },
     {
         label: '#02 card-2',
         icon: <reu.iconoCube />,
-        to: '/card2'
+        to: '/proyect2'
     },
     {
         label: '#03 card-2',

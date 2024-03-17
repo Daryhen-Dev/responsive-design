@@ -2,66 +2,68 @@ import styled from 'styled-components'
 import { LinkSideBar, reu } from '../../utils/dataStatic'
 import { useState } from 'react'
 import { useThemeStore } from '../../store/ThemeStore'
+import { NavLink } from 'react-router-dom'
 export const SideBar1 = () => {
     const [state, setState] = useState(false)
     const {  setTheme, theme } = useThemeStore() 
     return (
-        <Container className={state ? "sidebar" : "sidebar close"}>
-            <header>
-                <div className="image-text">
-                    <span className="image">
-                        <img src={reu.iconReact } alt="" />
-                    </span>
-                    <div className="text logo-text">
-                        <span className="name">Codinglab</span>
-                        <span className="profession">Web developer</span>
-                    </div>
-                </div>
-                <span onClick={()=> setState(!state)} className='bx bx-chevron-right toggle'>
-                    {<reu.iconArrowRight />}
-                </span>
-            </header>
-            <div className="menu-bar">
-                <div className="menu">
-                    <li className="search-box">
-                        <i className='bx bx-search icon'>{<reu.iconSearch/>}</i>
-                        <input type="text" placeholder="Search..." />
-                    </li>
-                  
-                        {LinkSideBar.map((item, index) => {
-                                return (
-                                    <li className="nav-link" key={index}>
-                                        <a href="#">
-                                            <span className="icon">{item.icon} </span>
-                                            <span className="text nav-text">{item.label}</span>
-                                        </a>
-                                    </li>
-                                )
-                            })
-                        }
-                </div>
-                <div className="bottom-content">
-                    <li className="">
-                        <a href="#">
-                            <span className='bx bx-log-out icon' >{<reu.iconLogout/>}</span>
-                            <span className="text nav-text">Logout</span>
-                        </a>
-                    </li>
-                    <li className="mode">
-                        <div className="sun-moon">
-                            <i className='bx bx-moon icon moon'></i>
-                            <i className='bx bx-sun icon sun'></i>
-                        </div>
-                        <span className="mode-text text">Dark mode</span>
-                        <div className="toggle-switch">
-                            <span className={theme === 'light' ? 'switch' : 'switch dark'} 
-                                    onClick={setTheme}></span>
-                        </div>
-                    </li>
+      <Container className={state ? "sidebar" : "sidebar close"}>
+      <header>
+        <div className="image-text">
+          <span className="image">
+            <img src={reu.iconReact} alt="" />
+          </span>
+          <div className="text logo-text">
+            <span className="name">Codinglab</span>
+            <span className="profession">Web developer</span>
+          </div>
+        </div>
+        <span onClick={() => setState(!state)} className="toggle">
+          {" "}
+          {<reu.iconArrowRight />}
+        </span>
+      </header>
+      <div className="menu-bar">
+        <div className="menu">
+          <li className="search-box">
+            <i className="bx bx-search icon">{<reu.iconSearch />}</i>
+            <input type="text" placeholder="Search..." />
+          </li>
 
-                </div>
+          {LinkSideBar.map((item, index) => {
+            return (
+              <Linksidebar className="nav-link" key={index}>
+                <NavLink className={({isActive})=>`Links${isActive?` active`:``}`} to={item.to}>
+                  <span className="icon">{item.icon}</span>
+                  <span className="text nav-text">{item.label}</span>
+                </NavLink>
+              </Linksidebar>
+            );
+          })}
+        </div>
+        <div className="bottom-content">
+          <li className="">
+            <a href="#">
+              <span className="bx bx-log-out icon">{<reu.iconLogout />}</span>
+              <span className="text nav-text">Logout</span>
+            </a>
+          </li>
+          <li className="mode">
+            <div className="sun-moon">
+              <i className="bx bx-moon icon moon"></i>
+              <i className="bx bx-sun icon sun"></i>
             </div>
-        </Container>
+            <span className="mode-text text">Dark mode</span>
+            <div className="toggle-switch">
+              <span
+                className={theme === "light" ? "switch" : "switch dark"}
+                onClick={setTheme}
+              ></span>
+            </div>
+          </li>
+        </div>
+      </div>
+    </Container>
     )
 }
 
