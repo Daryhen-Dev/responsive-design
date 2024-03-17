@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 import { LinkSideBar, reu } from '../../utils/dataStatic'
-import { useState } from 'react'
 import { useThemeStore } from '../../store/ThemeStore'
 import { NavLink } from 'react-router-dom'
-export const SideBar1 = () => {
-    const [state, setState] = useState(false)
+export const SideBar1 = ({state, setState}) => {
+
     const {  setTheme, theme } = useThemeStore() 
     return (
       <Container className={state ? "sidebar" : "sidebar close"}>

@@ -5,7 +5,6 @@ export const Proyecto2Template = () => {
 
     return (
         <Container>
-           <SideBar1 />
         </Container>
     )
 }
