@@ -5,6 +5,8 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 import { FiLogOut } from "react-icons/fi";
 import { FaSearch } from "react-icons/fa";
 import  logoreact from "../assets/react.svg"
+import { CgNotes } from "react-icons/cg";
+
 
 export const reu = {
     iconoCard: FaAddressCard,
@@ -13,7 +15,8 @@ export const reu = {
     iconArrowLeft: MdKeyboardArrowLeft,
     iconLogout: FiLogOut,
     iconSearch: FaSearch,
-    iconReact: logoreact
+    iconReact: logoreact,
+    iconNote: CgNotes
 }
 export const LinkSideBar = [
     {

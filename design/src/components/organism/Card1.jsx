@@ -23,7 +23,7 @@ export const Card1 = () => {
                     React-intermedio - full diseños responsive
                 </span>
                 <span className='precio' >$ 9.99</span>
-                <span> 12 de marzo del 2024</span>
+                <span className='fecha'> 12 de marzo del 2024</span>
             </div>
         </Container>
     )
@@ -105,6 +105,9 @@ const Container = styled.div`
         padding-top: 16%;
         span{
             font-weight: 700;
+        }
+        .title {
+            color: ${({theme}) => theme.text}
         }
         .precio{
             color: #b8b8b8;
